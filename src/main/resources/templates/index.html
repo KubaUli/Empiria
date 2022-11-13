@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.8rem;
+        }
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Wprowadź dane Klienta</h1>
+
+<form action="#" method="post" th:action="@{/register}" th:object="${person}">
+    <label>
+        Imię
+        <input type="text" placeholder="Jan" th:field="*{firstName}">
+    </label>
+
+    <label>
+        Nazwisko
+        <input type="text" placeholder="Kowalski" th:field="*{lastName}">
+    </label>
+
+    <label>
+        Email
+        <input type="email" placeholder="twoj@email.com" th:field="*{email}">
+    </label>
+
+    <label>
+        Numer Telefonu
+        <input type="number" placeholder="696908090" th:field="*{phoneNumber}">
+    </label>
+    <label>
+        Wiek
+        <input type="date" placeholder="01.01.2020" th:field="*{startDate}" >
+    </label>
+    <button type="submit">Zarejestruj</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adres</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.8rem;
+        }
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Wprowadź adres Klienta</h1>
+
+<form action="#" method="post" th:action="@{/registerUser}" th:object="${person}">
+
+    <label>
+Adres
+        <input type="text" placeholder="Elizy Orzeszkowej 33" th:field="*{addres}">
+    </label>
+
+    <label>
+        Kod pocztowy
+        <input type="text" placeholder="62-200" th:field="*{postCode}">
+    </label>
+
+    <label>
+        Miasto
+        <input type="text" placeholder="Gniezno" th:field="*{town}">
+    </label>
+
+
+    <button type="submit">Zarejestruj</button>
+</form>
+</body>
+</html>
