@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl"xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Rejestracja zakończona</title>
 </head>
-<body>
-  <h1>Rejestracja zakończona sukcesem!</h1>
+<body background="background.jpg">
+  <h1 th:text="'Witaj' + ' ' + ${person.getName()} " (>Logowanie zakończone sukcesem!</h1>
+<p> Logowanie zakończone sukcesem!</p>
+  <p>Wybierz czynność którą chciałbyś wykonać:</p>
+  <button th:href="MedicalInterview" type="submit">Wypełnij kartę medyczną</button>
+  <button th:href="index" type="submit">Powrót na stronę główną</button>
 </body>
 </html>

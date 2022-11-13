@@ -1,66 +1,47 @@
-package com.example.empiria;
+package com.example.empiria.MedicalInterview;
 
-import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-@Entity
-public class MedicalInterview {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class MedicalInterviewDto {
+    @NotNull
     private Boolean consentToProcessingOfPersonalData;
+    @NotNull
     private Boolean consentToProcessingPhoneNumber;
+    @NotNull
     private Boolean pregnancyOrBreastfeedingQuestion;
+    @NotNull
     private Boolean metalImplants;
+    @NotNull
     private Boolean autoimmuneDiseases;
+    @NotNull
     private Boolean communicableDiseases;
+    @NotNull
     private Boolean vascularDiseases;
+    @NotNull
     private Boolean diseases;
+    @NotNull
     private Boolean skinDiseases;
+    @NotNull
     private Boolean fiveMonthsBeforeSkinDiseases;
+    @NotNull
     private Boolean fiveMonthsBeforeRetinoid;
+    @NotNull
     private Boolean oneMonthsBeforeSolarium;
+    @NotNull
     private Boolean twoWeeksBeforefillers;
+    @NotNull
     private Boolean tattooHolder;
+    @NotNull
     private String OtherDiseases;
+    @NotNull
     private String surgicalProceduresFromFiveYearsBefore;
+    @NotNull
     private String medicationsTaken;
+    @NotNull
     private String supplementsTaken;
+    @NotNull
     private String alergiesOwned;
-    @ManyToOne
-    private Person person;
-
-    public MedicalInterview() {
-    }
-
-    public MedicalInterview( Boolean consentToProcessingOfPersonalData, Boolean consentToProcessingPhoneNumber, Boolean pregnancyOrBreastfeedingQuestion, Boolean metalImplants, Boolean autoimmuneDiseases, Boolean communicableDiseases, Boolean vascularDiseases, Boolean diseases, Boolean skinDiseases, Boolean fiveMonthsBeforeSkinDiseases, Boolean fiveMonthsBeforeRetinoid, Boolean oneMonthsBeforeSolarium, Boolean twoWeeksBeforefillers, Boolean tattooHolder, String otherDiseases, String surgicalProceduresFromFiveYearsBefore, String medicationsTaken, String supplementsTaken, String alergiesOwned, Person person) {
-
-
-        this.consentToProcessingOfPersonalData = consentToProcessingOfPersonalData;
-        this.consentToProcessingPhoneNumber = consentToProcessingPhoneNumber;
-        this.pregnancyOrBreastfeedingQuestion = pregnancyOrBreastfeedingQuestion;
-        this.metalImplants = metalImplants;
-        this.autoimmuneDiseases = autoimmuneDiseases;
-        this.communicableDiseases = communicableDiseases;
-        this.vascularDiseases = vascularDiseases;
-        this.diseases = diseases;
-        this.skinDiseases = skinDiseases;
-        this.fiveMonthsBeforeSkinDiseases = fiveMonthsBeforeSkinDiseases;
-        this.fiveMonthsBeforeRetinoid = fiveMonthsBeforeRetinoid;
-        this.oneMonthsBeforeSolarium = oneMonthsBeforeSolarium;
-        this.twoWeeksBeforefillers = twoWeeksBeforefillers;
-        this.tattooHolder = tattooHolder;
-        OtherDiseases = otherDiseases;
-        this.surgicalProceduresFromFiveYearsBefore = surgicalProceduresFromFiveYearsBefore;
-        this.medicationsTaken = medicationsTaken;
-        this.supplementsTaken = supplementsTaken;
-        this.alergiesOwned = alergiesOwned;
-        this.person = person;
-    }
-
-
-
-
 
     public Boolean getConsentToProcessingOfPersonalData() {
         return consentToProcessingOfPersonalData;
@@ -214,11 +195,5 @@ public class MedicalInterview {
         this.alergiesOwned = alergiesOwned;
     }
 
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 }
+

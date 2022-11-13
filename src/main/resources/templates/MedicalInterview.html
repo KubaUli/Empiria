@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adres</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 0.8rem;
+        }
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body background="background.jpg">
+
+<h1>
+    Szanowna Klientko, Szanowny Kliencie!
+    Cieszymy się móc gościć Ciebie w naszym SPA. Dokonamy wszelkich starań, aby móc rozpieścić Twoją skórę jak nikt inny!
+    Służymy chętnie naszą wiedzą i doświadczeniem. Jeśli masz jakiekolwiek pytania, śmiało pytaj. Jesteśmy tu dla Ciebie i Twojej skóry!
+    </h1>
+<p>
+    Aby móc dobrać najlepszą terapię do Twoich potrzeb, prosimy odpowiedz na kilka pytań.
+    Ponieważ dane szczególnej kategorii w tym zdrowia są chronione szczególnie, musimy prosić Cię o wyrażenie wyraźnej zgody na ich przetworzenie.
+    Prosimy wyraźnie potwierdzić, że zgadzasz się, abyśmy przetwarzali podane przez Ciebie dane.
+</p>
+
+<h3>Czy wyrażasz zgodę na przetwarzanie przez  EMPIRIA S.C. z siedzibą w Gnieźnie danych osobowych o Twoim stanie zdrowia:</h3>
+<form action="#" method="post" th:action="@{/InterviewADD}" th:object="${interview}">
+
+    <label>
+        TAK, zgadzam się na to, abyście przetwarzali podane przeze mnie dane szczególnej kategorii.
+        <input type="checkbox"  th:field="*{consentToProcessingOfPersonalData}" value="true">
+    </label>
+   <h3>Wyrażam zgodę na przetwarzanie mojego numeru telefonu, w celach otrzymywania informacji handlowych od EMPIRIA S.C</h3>
+    <label>
+        TAK, zgadzam się na przetwarzanie mojego numeru telefonu
+        <input type="checkbox"  th:field="*{consentToProcessingPhoneNumber}" value="true">
+    </label>
+<p> W każdej chwili przysługuje Ci prawo do wycofania zgody na przetwarzanie Twoich danych osobowych.
+    Cofnięcie zgody nie będzie wpływać na zgodność z prawem przetwarzania,
+    którego dokonano na podstawie Twojej zgody przed jej wycofaniem. </p>
+
+    <h4>Która z podanych pozycji dotyczy Ciebie? Zaznacz TAK lub NIE. Jeśli TAK, zaznacz która. </h4>
+    <p>Ciąża / karmienie piersią</p>
+    <label>
+        Tak
+        <input type="checkbox" placeholder="Gniezno" th:field="*{pregnancyOrBreastfeedingQuestion}"value=true>
+    </label>
+
+
+    <button type="submit">Zarejestruj</button>
+
+</form>
+</body>
+</html>

@@ -1,5 +1,7 @@
 package com.example.empiria;
 
+import com.example.empiria.Person.Person;
+
 import javax.persistence.*;
 
 public class LipolysisConsenti {

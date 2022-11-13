@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Rejestracja</title>
+    <link rel="stylesheet" th:href="styles.css">
     <style>
         .error {
             color: red;
             font-size: 0.8rem;
         }
+
         label {
             display: block;
         }
     </style>
 </head>
 
-<body>
+<body th:background="background.jpg" background="background.jpg">
+
+
 <h1>Wprowadź dane Klienta</h1>
 
 <form action="#" method="post" th:action="@{/register}" th:object="${person}">
@@ -22,25 +26,31 @@
         Imię
         <input type="text" placeholder="Jan" th:field="*{firstName}">
     </label>
-
+    <p th:errors="*{firstName}" class="error">Błędy związane z imieniem</p>
     <label>
         Nazwisko
         <input type="text" placeholder="Kowalski" th:field="*{lastName}">
-    </label>
 
+    </label>
+    <p th:errors="*{lastName}" class="error">Błędy związane z nazwiskiem</p>
     <label>
         Email
         <input type="email" placeholder="twoj@email.com" th:field="*{email}">
-    </label>
 
+    </label>
+    <p th:errors="*{email}" class="error">Błędny adres email</p>
     <label>
         Numer Telefonu
         <input type="number" placeholder="696908090" th:field="*{phoneNumber}">
+
     </label>
+    <p th:errors="*{phoneNumber}" class="error">Błędny Numer Telefonu</p>
     <label>
         Wiek
-        <input type="date" placeholder="01.01.2020" th:field="*{startDate}" >
+        <input type="date" placeholder="01.01.2020" th:field="*{startDate}">
+
     </label>
+    <p th:errors="*{startDate}" class="error">Błędny wiek</p>
     <button type="submit">Zarejestruj</button>
 </form>
 </body>

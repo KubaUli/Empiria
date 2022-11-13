@@ -1,7 +1,7 @@
-package com.example.empiria;
+package com.example.empiria.Person;
 
 
-import ch.qos.logback.core.joran.spi.NoAutoStart;
+import com.example.empiria.MedicalInterview.MedicalInterview;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -29,18 +29,11 @@ public class Person {
     @Email
     @Size(min = 5, max = 100)
     private String email;
+    @NotNull
     @Past
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate startDate;
-    @NotNull
-    private String addres;
-    @NotNull
-    @Size(min = 5, max = 6)
-    private String postCode;
-    @NotNull
-    private String Town;
-
 
 
 
@@ -56,9 +49,7 @@ public class Person {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.startDate = startDate;
-        this.addres = addres;
-        this.postCode = postCode;
-        Town = town;
+
     }
 
     public String getName() {
@@ -101,27 +92,5 @@ public class Person {
         this.startDate = startDate;
     }
 
-    public String getAddres() {
-        return addres;
-    }
 
-    public void setAddres(String addres) {
-        this.addres = addres;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
-    }
-
-    public String getTown() {
-        return Town;
-    }
-
-    public void setTown(String town) {
-        Town = town;
-    }
 }

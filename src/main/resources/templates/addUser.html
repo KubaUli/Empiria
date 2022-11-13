@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Adres</title>
+    <link rel="stylesheet" href="/styles.css">
     <style>
         .error {
             color: red;
@@ -14,10 +15,12 @@
     </style>
 </head>
 
-<body>
+<body background="background.jpg">
+
+
 <h1>Wprowadź adres Klienta</h1>
 
-<form action="#" method="post" th:action="@{/registerUser}" th:object="${person}">
+<form action="#" method="post" th:action="@{/registerUser}" th:object="${personAddres}">
 
     <label>
 Adres
@@ -36,6 +39,7 @@ Adres
 
 
     <button type="submit">Zarejestruj</button>
+
 </form>
 </body>
 </html>

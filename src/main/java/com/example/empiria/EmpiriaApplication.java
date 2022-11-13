@@ -1,6 +1,6 @@
 package com.example.empiria;
 
-import org.springframework.beans.factory.annotation.Configurable;
+import com.example.empiria.Person.PersonRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

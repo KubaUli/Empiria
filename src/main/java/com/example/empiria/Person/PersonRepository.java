@@ -1,6 +1,5 @@
-package com.example.empiria;
+package com.example.empiria.Person;
 
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
