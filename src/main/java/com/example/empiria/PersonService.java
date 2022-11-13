@@ -27,6 +27,7 @@ public class PersonService {
                         personRepository.findByStartDate(personDto.getStartDate()).isEmpty())
         {
             Person person = personDtoMapper.map(personDto);
+
             newClient = true;
 
 
