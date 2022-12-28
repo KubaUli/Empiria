@@ -2,13 +2,18 @@
 <html lang="pl"xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="styles.css">
   <title>Rejestracja zakończona</title>
 </head>
 <body background="background.jpg">
   <h1 th:text="'Witaj' + ' ' + ${person.getName()} " (>Logowanie zakończone sukcesem!</h1>
 <p> Logowanie zakończone sukcesem!</p>
   <p>Wybierz czynność którą chciałbyś wykonać:</p>
+  <form action="#" method="post" th:action="@{/register}">
   <button th:href="MedicalInterview" type="submit">Wypełnij kartę medyczną</button>
-  <button th:href="index" type="submit">Powrót na stronę główną</button>
+  </form>
+  <form action="#" >
+  <button th:href="@{/}" type="submit">Powrót na stronę główną</button>
+  </form>
 </body>
 </html>

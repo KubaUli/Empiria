@@ -4,43 +4,24 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class MedicalInterviewDto {
-    @NotNull
     private Boolean consentToProcessingOfPersonalData;
-    @NotNull
     private Boolean consentToProcessingPhoneNumber;
-    @NotNull
     private Boolean pregnancyOrBreastfeedingQuestion;
-    @NotNull
     private Boolean metalImplants;
-    @NotNull
     private Boolean autoimmuneDiseases;
-    @NotNull
     private Boolean communicableDiseases;
-    @NotNull
     private Boolean vascularDiseases;
-    @NotNull
     private Boolean diseases;
-    @NotNull
     private Boolean skinDiseases;
-    @NotNull
     private Boolean fiveMonthsBeforeSkinDiseases;
-    @NotNull
     private Boolean fiveMonthsBeforeRetinoid;
-    @NotNull
     private Boolean oneMonthsBeforeSolarium;
-    @NotNull
     private Boolean twoWeeksBeforefillers;
-    @NotNull
     private Boolean tattooHolder;
-    @NotNull
     private String OtherDiseases;
-    @NotNull
     private String surgicalProceduresFromFiveYearsBefore;
-    @NotNull
     private String medicationsTaken;
-    @NotNull
     private String supplementsTaken;
-    @NotNull
     private String alergiesOwned;
 
     public Boolean getConsentToProcessingOfPersonalData() {

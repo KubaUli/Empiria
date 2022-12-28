@@ -1,9 +1,7 @@
 package com.example.empiria.Person;
 
-import com.example.empiria.Person.Person;
-import com.example.empiria.Person.PersonService;
-import com.example.empiria.PersonAddres.PersonAddres;
-import com.example.empiria.PersonAddres.PersonAddresDto;
+import com.example.empiria.Person.PersonAddres.PersonAddres;
+import com.example.empiria.Person.PersonAddres.PersonAddresDto;
 import org.springframework.stereotype.Service;
 
 @Service

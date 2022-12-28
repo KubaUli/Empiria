@@ -1,4 +1,4 @@
-package com.example.empiria.PersonAddres;
+package com.example.empiria.Person.PersonAddres;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;

@@ -1,7 +1,5 @@
 package com.example.empiria.MedicalInterview;
 
-import com.example.empiria.PersonAddres.PersonAddresDto;
-import com.example.empiria.PersonAddres.PersonAddresService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

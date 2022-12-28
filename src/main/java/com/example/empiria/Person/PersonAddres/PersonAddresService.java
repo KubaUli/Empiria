@@ -1,4 +1,4 @@
-package com.example.empiria.PersonAddres;
+package com.example.empiria.Person.PersonAddres;
 
 import com.example.empiria.Person.PersonAddresDtoMapper;
 import org.springframework.stereotype.Service;

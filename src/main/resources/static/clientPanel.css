@@ -1,0 +1,85 @@
+#menu {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    overflow: hidden;
+    font-family: calibri, tahoma;
+}
+.header {
+    margin: auto;
+    text-align:center ;
+    scale: 200%;
+
+}
+selector{
+    background-color: #bceae6;
+}
+body{
+    background-color: #bceae6;
+}
+.img {
+    max-width: 100%;
+}
+#person {
+    border: 1px solid  #fed1a5 ;
+    float: left;
+    width: auto;
+    scroll-behavior: auto;
+    background-color: #f1ecec;
+}
+#page{
+    width: 900px;
+}
+#note{
+    float: left;
+    width: auto;
+    margin-left: auto;
+    border: 1px solid  #fed1a5 ;
+    background-color: #f1ecec;
+
+}
+
+ul#menu li {
+    border: 1px solid #d5d5d5;
+    list-style-type: none;
+    float: none;
+    background: #e9e9e9;
+    margin-left: 3px;
+}
+
+ul#menu li:hover {
+    border: 1px solid #fed1a5;
+    list-style-type: none;
+    float: none;
+    background: #fed1a5;
+    margin-left: 3px;
+}
+selector{
+    background-color: #bceae6;
+}
+ul#menu li a {
+    display : block ;
+    padding : 4pt;
+    text-decoration : none;
+}
+
+ul#menu li li a {
+    width: 300px;
+}
+
+ul#menu li li:hover {
+    background: #fed1a5;
+}
+
+ul#menu li ul {
+    overflow: hidden;
+    display: none;
+}
+
+ul#menu li:hover ul {
+    position: absolute;
+    background: #fed1a5;
+    padding: 0;
+    display: block;
+    width: 200px;
+}

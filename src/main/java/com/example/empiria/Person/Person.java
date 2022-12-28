@@ -34,12 +34,16 @@ public class Person {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate startDate;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dateOfAccountCreation;
 
 
 
  @OneToMany(mappedBy = "person")
     private List<MedicalInterview> medicalInformation = new ArrayList<>();
-
+   /* @OneToMany(mappedBy = "person")
+    private List<Note> note = new ArrayList<>();*/
     public Person() {
     }
 
@@ -48,8 +52,21 @@ public class Person {
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.startDate = startDate;
+        this.startDate =startDate;
 
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public LocalDate getDateOfAccountCreation() {
+        return dateOfAccountCreation;
+    }
+
+    public void setDateOfAccountCreation(LocalDate dateOfAccountCreation) {
+        this.dateOfAccountCreation = dateOfAccountCreation;
     }
 
     public String getName() {

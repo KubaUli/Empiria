@@ -1,57 +1,90 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Rejestracja</title>
+    <title>Strona główna</title>
     <link rel="stylesheet" th:href="styles.css">
-    <style>
-        .error {
-            color: red;
-            font-size: 0.8rem;
-        }
+    <link rel="stylesheet" href="../static/table.css" th:href="@{table.css}">
 
-        label {
-            display: block;
-        }
-    </style>
 </head>
+<body>
 
-<body th:background="background.jpg" background="background.jpg">
+<link rel="stylesheet" href="../static/indexMenu.css" type="text/css" th:href="@{indexMenu.css} ">
+<ul id="menu">
+    <li><a href="/">Strona główna</a></li>
+
+    <li><a >Sortuj </a>
+        <ul>
+
+            <li><a>Po numerze ID</a></li>
+            <li><a href="#" th:action="@{/sortByName}">Alfabetycznie po Imieniu</a></li>
+            <li><a href="#" th:action="@{/sortByLastName}">Alfabetycznie po Nazwisku</a></li>
+
+        </ul>
+    </li>
+    <li><a href="/newUser">Dodaj nową osobę</a></li>
+    <li><a href="#">Szukaj osoby po</a>
+        <ul>
+            <li><a href="#">Numerze ID</a></li>
+            <li><a href="#">Imieniu i Nazwisku</a>
+            <li><a href="#">Numerze telefonu</a></li>
+            <li><a href="#">Adresie zamiesznania</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#">Wyślij Wiadomość SMS</a></li>
+    <li><a href="#">Wyślij Wiadomość Mail</a></li>
+    <li><a href="#">Kontakt</a>
+        <ul>
+            <li><a href="#">Formularz kontaktowy</a></li>
+            <li><a href="#">Pomoc</a></li>
+        </ul>
+    </li>
+
+</ul>
+<div class="container">
+    <h1>Lista Klientów</h1>
+    <table class="odd">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Numer telefonu</th>
+            <th>Email</th>
+            <th>Data urodzenia</th>
+            <th>Data utworzenia konta</th>
+        </tr>
+        <tbody th:remove="all-but-first">
+        <thead>
+        <tr class="odd-row"
+            th:each="person, status: ${ClientList}" th:object="${person}"
+            th:class="${status.odd? 'odd-row': 'odd'}"
+        >
+            <th th:text="*{id}">1</th>
+            <th th:text="*{name}">Jakub</th>
+            <th th:text="*{lastName}">Ulikowski</th>
+            <th th:text="*{phoneNumber}">123456789</th>
+            <th th:text="*{email}">jUlikowski@gmail.com</th>
+            <th th:text="*{startDate}">30.03.1998</th>
+            <th th:text="*{dateOfAccountCreation}">01.01.2022</th>
+            <th>
+                <a action="" method="get" th:href="@{/ClientPanel/{id}(id=${person.getId()})}">Panel Klienta</a>
 
 
-<h1>Wprowadź dane Klienta</h1>
+                <form action="#" method="post" th:action="@{/add}">
+                    <button type="submit">Wprowadź formularz</button>
+                </form>
 
-<form action="#" method="post" th:action="@{/register}" th:object="${person}">
-    <label>
-        Imię
-        <input type="text" placeholder="Jan" th:field="*{firstName}">
-    </label>
-    <p th:errors="*{firstName}" class="error">Błędy związane z imieniem</p>
-    <label>
-        Nazwisko
-        <input type="text" placeholder="Kowalski" th:field="*{lastName}">
+            </th>
+        </tr>
 
-    </label>
-    <p th:errors="*{lastName}" class="error">Błędy związane z nazwiskiem</p>
-    <label>
-        Email
-        <input type="email" placeholder="twoj@email.com" th:field="*{email}">
+        </thead>
 
-    </label>
-    <p th:errors="*{email}" class="error">Błędny adres email</p>
-    <label>
-        Numer Telefonu
-        <input type="number" placeholder="696908090" th:field="*{phoneNumber}">
 
-    </label>
-    <p th:errors="*{phoneNumber}" class="error">Błędny Numer Telefonu</p>
-    <label>
-        Wiek
-        <input type="date" placeholder="01.01.2020" th:field="*{startDate}">
 
-    </label>
-    <p th:errors="*{startDate}" class="error">Błędny wiek</p>
-    <button type="submit">Zarejestruj</button>
-</form>
+    </table>
+</div>
+
 </body>
 </html>

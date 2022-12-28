@@ -2,6 +2,8 @@ package com.example.empiria.Person;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PersonService {
     private final PersonRepository personRepository;
@@ -35,5 +37,9 @@ public class PersonService {
         personRepository.save(person);
 
     }
+
+
+
+
 }
 

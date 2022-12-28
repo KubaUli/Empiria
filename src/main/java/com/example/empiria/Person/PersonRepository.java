@@ -9,12 +9,18 @@ import java.util.List;
 @Repository
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
-    List<Person>findByName(String name);
-    List<Person>findByLastName(String lastName);
-    List<Person>findByStartDate(LocalDate startDate);
-    List<Person>findByEmail(String email);
-    List<Person>findByPhoneNumber(Integer phoneNumber);
+    List<Person> findByName(String name);
+
+    List<Person> findByLastName(String lastName);
+
+    List<Person> findByStartDate(LocalDate startDate);
+
+    List<Person> findByEmail(String email);
+
+    List<Person> findByPhoneNumber(Integer phoneNumber);
 
 
 
 }
+
+

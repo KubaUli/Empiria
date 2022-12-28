@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Klienta</title>
+
+
+
+</head>
+<body>
+<link rel="stylesheet" href="../static/clientPanel.css" type="text/css" th:href="@{clientPanel.css} ">
+<div id="page">
+
+<header>
+
+
+
+<ul id="menu">
+    <li><a href="/">Strona główna</a></li>
+
+    <li><a>Sortuj </a>
+        <ul>
+
+            <li><a>Po numerze ID</a></li>
+            <li><a href="#" th:action="@{/sortByName}">Alfabetycznie po Imieniu</a></li>
+            <li><a href="#" th:action="@{/sortByLastName}">Alfabetycznie po Nazwisku</a></li>
+
+        </ul>
+    </li>
+    <li><a href="/newUser">Dodaj nową osobę</a></li>
+    <li><a href="#">Szukaj osoby po</a>
+        <ul>
+            <li><a href="#">Numerze ID</a></li>
+            <li><a href="#">Imieniu i Nazwisku</a>
+            <li><a href="#">Numerze telefonu</a></li>
+            <li><a href="#">Adresie zamiesznania</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#">Wyślij Wiadomość SMS</a></li>
+    <li><a href="#">Wyślij Wiadomość Mail</a></li>
+    <li><a href="#">Kontakt</a>
+        <ul>
+            <li><a href="#">Formularz kontaktowy</a></li>
+            <li><a href="#">Pomoc</a></li>
+        </ul>
+    </li>
+
+</ul>
+</header>
+</div>
+
+<h1>Panel Klienta</h1>
+
+
+<div id="person">
+
+<tr class="odd-row"
+    th:each="person, status: ${clientPanel}" th:object="${clientPanel}"
+    th:class="${status.odd? 'odd-row': 'odd'}"
+>
+    <h2>Informacje o kliencie</h2>
+    <a th:text="'Id: ' + *{getPersonId().toString()}">Id: 1</a><br>
+    <a th:text="'Imię: ' + *{personName}">Imię: Jakub</a><br>
+    <a th:text="'Nazwisko: ' + *{personLastName}">Nazwisko: Ulikowski</a><br>
+    <a th:text="'Numer telefonu: ' + *{personPhoneNumber}">Numer Telefonu: 123456789</a><br>
+    <a th:text="'Email: ' + *{personEmail}">Email: jUlikowski@gmail.com</a><br>
+    <a th:text="'Data urodzenia: ' + *{personStartDate}">Data Urodzenia: 30.03.1998</a><br>
+    <a th:text="'Data utworzenia konta: ' + *{personDateOfAccountCreation}">Data utworzenia konta: 01.01.2022</a><br>
+    <a th:text="'Adres: '+ *{addres}">Adres: Elizy Orzeszkowej 33</a><br>
+    <a th:text="'Kod pocztowy: '+ *{postCode}">Kod pocztowy: 62-200</a><br>
+    <a th:text="'Miejscowość: '+ *{town}">Miejscowość: Gniezno</a><br>
+</tr>
+</div>
+
+<div id="note">
+    <h2>Notatki</h2>
+<!--    <tr class="odd-row"
+ &lt;!&ndash;       th:each="note, status: ${clientPanel}" th:object="${clientPanel}"
+        th:class="${status.odd? 'odd-row': 'odd'}"
+    >
+<a th:text="'notatka z dnia:' ">notatka z dnia: 24.12.2022</a>&ndash;&gt;
+    </tr>-->
+
+    <form method="post" action="/save">
+        Treść:
+        <label>
+            <textarea name="note" placeholder="Zacznij pisać..." rows="5" cols="30"></textarea>
+        </label><br>
+        <button type="submit">Zapisz</button>
+
+    </form>
+
+
+</div>
+<div id="zdjecie">
+
+<h2>Zdjęcia</h2>
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

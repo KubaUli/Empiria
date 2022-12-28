@@ -1,0 +1,50 @@
+.container {
+
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#person {
+    float: left;
+}
+#note{
+    float: left;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+}
+
+table {
+    width: 600px;
+}
+
+table, th, td {
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+
+.above-avg {
+    color: green;
+}
+
+.below-avg {
+    color: red;
+}
+
+.odd-row {
+    background-color: lightgray;
+}
+
+.odd {
+    background-color: white;
+}
+
+.back {
+    background-color: #bceae6;
+}

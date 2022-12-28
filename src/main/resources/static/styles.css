@@ -1,0 +1,15 @@
+.header {
+    margin: auto;
+text-align:center ;
+    scale: 200%;
+
+}
+selector{
+    background-color: #bceae6;
+}
+body{
+    background-color: #bceae6;
+}
+.img {
+    max-width: 100%;
+}

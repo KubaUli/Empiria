@@ -1,8 +1,6 @@
 package com.example.empiria.MedicalInterview;
 
 import com.example.empiria.Person.PersonService;
-import com.example.empiria.PersonAddres.PersonAddres;
-import com.example.empiria.PersonAddres.PersonAddresDto;
 import org.springframework.stereotype.Service;
 
 @Service

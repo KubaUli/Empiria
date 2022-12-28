@@ -1,4 +1,4 @@
-package com.example.empiria.PersonAddres;
+package com.example.empiria.Person.PersonAddres;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
